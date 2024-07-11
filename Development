@@ -1,0 +1,33 @@
+[python tools]
+#
+# atomic_gba/tile_index_from_s_file.py
+#
+If you change "graphics/bg_tiles.bmp", reflect to "include/ag_bg_tiles.h".
+
+Before using, build resource files (under graphics).
+Execute "python ./tile_index_from_s_file.py ./build/bg_tiles_bn_gfx.s".
+Copy output strings "#define ~", and paste to "include/ag_bg_tiles.h".
+
+#
+# atomic_gba/media_temp/level2init_data.py
+#
+generate "src/ag_default_levels.cpp.h" from levels data "media_temp/levels/default_levels.dat".
+
+cd "media_temp"
+Execute "python ./level2init_data.py ./levels/default_levels.dat > ag_default_levels.cpp.h"
+copy to "src/ag_default_levels.cpp.h"
+
+[Edit bmp files]
+Use usenti.exe
+-> https://www.gbadev.org/tools.php?showinfo=1441
+Save as "Bit depth: 4(16color)"
+
+[Edit music/sound files]
+# audio/*.xm
+Use MilkyTracker
+
+# audio/*.wav
+Use MilkyTracker for "media_temp/snd/*.xm"
+Save Song as ".wav"
+Convert format to "8bit 22050Hz"
+ -> sox input.wav -r 22050 -b 8 -c 1 output.wav

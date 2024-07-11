@@ -1,0 +1,41 @@
+###########################################################
+#
+# Atomic for GBA
+#
+###########################################################
+First Release 2024/07/11
+
+[description]
+KAtomic clone for GBA(Game Boy Advance)
+developed on mgba
+
+KAtomic: https://github.com/KDE/katomic
+
+[build]
+1. install DevKitPro(DevKitARM)
+2. set environment variable(DEVKITARM/DEVKITPRO)
+3. download butano engine -> https://github.com/GValiente/butano
+   *developed on butano-17.7.0
+4. put "atomic_gba" under "butano/"
+5. cd butano/atomic_gba
+6. make
+
+[execute]
+# simple
+mgba ./atomic_gba.gba
+
+# double the screen size
+mgba -2 ./atomic_gba.gba
+
+# output log
+mgba -l 4 ./atomic_gba.gba 
+
+[key controls]
+UP/DOWN/LEFT/RIGHT : Move
+A: Select Atom
+B: Deselect Atom
+Select: Display the final image
+Start: Return to top
+
+[LICENSE]
+Basically, Follows the KAtomic license.
